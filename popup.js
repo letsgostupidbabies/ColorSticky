@@ -218,3 +218,15 @@ chrome.runtime.onMessage.addListener((msg)=>{
     save(); renderNotes();
   }
 });
+
+// Clear completed todos (удалить выполненные)
+const clearCompletedBtn = document.getElementById('clear-completed');
+if (clearCompletedBtn) {
+  clearCompletedBtn.addEventListener('click', () => {
+    if (!confirm('Удалить все выполненные задачи?')) return;
+    state.todos = state.todos.filter(t => !t.done); // оставляем только невыполненные
+    save();
+    renderTodos();
+  });
+}
+
