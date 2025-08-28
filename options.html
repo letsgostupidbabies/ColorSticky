@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Color Sticky — Настройки</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Color Sticky — Настройки</h1>
+    <section class="card">
+      <h2>Палитра по умолчанию</h2>
+      <p class="muted">Выберите цвет, который будет использоваться для новых стикеров.</p>
+      <div id="palette" class="palette"></div>
+    </section>
+
+    <section class="card">
+      <h2>Данные</h2>
+      <div class="actions">
+        <button id="export" class="btn">Экспорт JSON</button>
+        <input type="file" id="import" accept="application/json" hidden>
+        <button id="import-btn" class="btn">Импорт JSON</button>
+        <button id="wipe" class="btn danger">Стереть всё</button>
+      </div>
+      <p class="muted">Экспортируйте данные, чтобы перенести их на другое устройство, или импортируйте сохранённые.</p>
+    </section>
+
+    <footer class="muted">v1.0.0</footer>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

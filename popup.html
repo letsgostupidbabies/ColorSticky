@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Color Sticky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="logo">🗒️</span>
+      <h1>Color Sticky</h1>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Основные разделы">
+      <button id="tab-notes" class="tab active" data-target="notes" role="tab" aria-selected="true">Стикеры</button>
+      <button id="tab-todo" class="tab" data-target="todo" role="tab" aria-selected="false">To‑Do</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-notes" class="view active" role="tabpanel" aria-labelledby="tab-notes">
+      <div class="tools">
+        <button id="add-note" class="btn primary">+ Новый стикер</button>
+        <button id="clear-notes" class="btn subtle" title="Удалить все стикеры">Очистить</button>
+      </div>
+      <div id="notes-grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <section id="view-todo" class="view" role="tabpanel" aria-labelledby="tab-todo">
+      <div class="todo-input">
+        <input id="todo-text" type="text" placeholder="Что сделать?" maxlength="180">
+        <button id="add-todo" class="btn primary">Добавить</button>
+      </div>
+      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+      <div class="todo-tools">
+        <span id="todo-count" class="muted"></span>
+        <div class="spacer"></div>
+        <button id="clear-completed" class="btn subtle">Удалить выполненные</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <dialog id="note-dialog">
+    <form method="dialog" class="note-form">
+      <h3 id="dialog-title">Новый стикер</h3>
+      <textarea id="note-text" rows="6" placeholder="Текст заметки..."></textarea>
+      <div class="palette" id="color-palette" role="listbox" aria-label="Выбор цвета"></div>
+      <menu class="dialog-actions">
+        <button id="cancel-note" value="cancel" class="btn subtle">Отмена</button>
+        <button id="save-note" value="default" class="btn primary">Сохранить</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <a href="options.html" target="_blank" class="muted">Настройки</a>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
